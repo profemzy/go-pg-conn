@@ -1,5 +1,5 @@
 # Compile stage
-FROM golang:1.16.5 AS build-env
+FROM golang:1.16.6 AS build-env
 
 ADD . /dockerdev
 WORKDIR /dockerdev
@@ -12,7 +12,7 @@ FROM debian:buster
 EXPOSE 8080
 
 WORKDIR /
-COPY .env .env
+#COPY .env .env
 COPY --from=build-env /server /
 
 CMD ["/server"]

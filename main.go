@@ -26,11 +26,11 @@ func main() {
 func connect() bool {
 
 	var (
-		host     = goDotEnvVariable("HOST")
+		host     = goEnvVariable("HOST")
 		port     = 5432
-		user     = goDotEnvVariable("DB_USER")
-		password = goDotEnvVariable("DB_PASSWORD")
-		dbname   = goDotEnvVariable("DB_NAME")
+		user     = goEnvVariable("DB_USER")
+		password = goEnvVariable("DB_PASSWORD")
+		dbname   = goEnvVariable("DB_NAME")
 	)
 
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+

@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: conn-demo-app
-          image: profemzy/go-pg-conn
+          image: profemzy/go-pg-conn:v1
           ports:
             - containerPort: 8080
           resources:
@@ -44,7 +44,7 @@ spec:
           image: gcr.io/cloudsql-docker/gce-proxy:1.17
           command:
             - "/cloud_sql_proxy"
-            - "-instances=dapper-ops:us-central1:compliance-db=tcp:5432"
+            - "-instances=sre-scratchpad:us-central1:demo-db=tcp:5432"
 
             # This flag specifies where the service account key can be found
             - "-credential_file=/secrets/service_account.json"
